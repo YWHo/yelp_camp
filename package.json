@@ -1,0 +1,28 @@
+{
+  "name": "yelp_camp",
+  "version": "1.0.0",
+  "description": "YelpCamp learning project",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node_modules/nodemon/bin/nodemon.js app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YWHo/yelp_camp.git"
+  },
+  "author": "instructor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YWHo/yelp_camp/issues"
+  },
+  "homepage": "https://github.com/YWHo/yelp_camp#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "npm": "^5.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
