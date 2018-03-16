@@ -8,6 +8,7 @@ app.listen(port, function() {
 })
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static(__dirname + '/public'))
 
 app.set("view engine", "ejs")
 
@@ -16,15 +17,15 @@ app.get("/", function(req, res) {
 });
 
 var campgrounds = [
-    {name: "Salmon Creek", image: "https://pixabay.com/get/eb37b60e20f6093ed1584d05fb1d4e97e07ee3d21cac104497f1c17ea7e9b1b8_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/eb31b00e28f2083ed1584d05fb1d4e97e07ee3d21cac104497f1c17ea7e9b1b8_340.jpg"},
-    {name: "Mountain Goat's Rest", image: "https://pixabay.com/get/e830b50c2bf5023ed1584d05fb1d4e97e07ee3d21cac104497f1c17fa4eeb6b0_340.jpg"},
-    {name: "Salmon Creek", image: "https://pixabay.com/get/eb37b60e20f6093ed1584d05fb1d4e97e07ee3d21cac104497f1c17ea7e9b1b8_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/eb31b00e28f2083ed1584d05fb1d4e97e07ee3d21cac104497f1c17ea7e9b1b8_340.jpg"},
-    {name: "Mountain Goat's Rest", image: "https://pixabay.com/get/e830b50c2bf5023ed1584d05fb1d4e97e07ee3d21cac104497f1c17fa4eeb6b0_340.jpg"},
-    {name: "Salmon Creek", image: "https://pixabay.com/get/eb37b60e20f6093ed1584d05fb1d4e97e07ee3d21cac104497f1c17ea7e9b1b8_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/eb31b00e28f2083ed1584d05fb1d4e97e07ee3d21cac104497f1c17ea7e9b1b8_340.jpg"},
-    {name: "Mountain Goat's Rest", image: "https://pixabay.com/get/e830b50c2bf5023ed1584d05fb1d4e97e07ee3d21cac104497f1c17fa4eeb6b0_340.jpg"}
+    {name: "Salmon Creek", image: "images/image-01.jpg"},
+    {name: "Granite Hill", image: "images/image-02.jpg"},
+    {name: "Mountain Goat's Rest", image: "images/image-03.jpg"},
+    {name: "Cloud Peak", image: "images/image-04.jpg"},
+    {name: "Red Rock Mountain", image: "images/image-05.jpg"},
+    {name: "Martin Hill", image: "images/image-06.jpg"},
+    {name: "Mangy Wood", image: "images/image-07.jpg"},
+    {name: "Little Canyon", image: "images/image-08.jpg"},
+    {name: "Silverthorne Rest", image: "images/image-09.jpg"}
 ]
 
 app.get("/campgrounds", function(req, res) {
