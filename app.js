@@ -2,6 +2,20 @@ const express = require('express')
 const app = express()
 const bodyParser = require("body-parser")
 const port = process.env.PORT || 3000
+const MongoClient = require("mongodb").MongoClient
+
+MongoClient.connect('mongodb://127.0.0.1:27017', function(err, db) {
+
+    if (err) {
+        console.log('Error: Local MongoDB server is not available!!!')
+        throw err;
+    } else {
+        console.log("Connected")
+    }
+
+    db.close();
+
+})
 
 app.listen(port, function() {
     console.log("The YelpCamp Server Has Started!")
