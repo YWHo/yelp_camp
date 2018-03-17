@@ -8,18 +8,19 @@ MongoClient.connect('mongodb://127.0.0.1:27017', function(err, db) {
 
     if (err) {
         console.log('Error: Local MongoDB server is not available!!!')
-        throw err;
+        throw err
     } else {
-        console.log("Connected")
+        console.log("DB is Connected")
+        app.listen(port, function() {
+            console.log("The YelpCamp Server Has Started!")
+        })
     }
 
     db.close();
 
 })
 
-app.listen(port, function() {
-    console.log("The YelpCamp Server Has Started!")
-})
+
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/public'))
