@@ -6,7 +6,7 @@ A fictional web development project about campsites
 1. In any of the terminal, run: npm install
 2. Then run: npm run mongo-mac
 (if using window, run mongo-win; read more at https://www.jokecamp.com/blog/running-local-mongodb-with-npm-scripts/)
-3. In another terminal, run: npm start (or npm dev)
+3. In another terminal, run: npm run start (or npm run dev)
 
 ## Technology used
 * body-parser - parse incoming request bodies in a middleware
