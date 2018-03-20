@@ -21,23 +21,12 @@ app.get("/", function(req, res) {
 
 var campgroundSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String
 })
 
 var Campgrounds = mongoose.model("Campgrounds", campgroundSchema)
 
-// Campgrounds.create(
-//     {
-//         name: "Salmon Creek",
-//         image: "images/image-01.jpg"
-//     }, function (err, campgrounds) {
-//         if (err) {
-//             console.log(err)
-//         } else {
-//             console.log("NEWLY CREATED CAMPGROUND: ")
-//             console.log(campgrounds)
-//         }
-//     })
 
 // var campgrounds = [
 //     {name: "Salmon Creek", image: "images/image-01.jpg"},
@@ -57,20 +46,33 @@ app.get("/campgrounds", function(req, res) {
             console.log(err)
             res.redirect("/")
         } else {
-            res.render("campgrounds", {campgrounds: campgrounds});
+            res.render("index", {campgrounds: campgrounds});
         }
     })
 })
 
 app.get("/campgrounds/new", function(req, res) {
-    res.render("new.ejs")
+    res.render("new")
+})
+
+app.get("/campgrounds/:id", function(req, res) {
+    Campgrounds.findById(req.params.id, function(err, foundItem) {
+        if (err) {
+            console.log(err)
+            res.redirect("campgrounds")
+        } else {
+            res.render("show", {campground: foundItem})
+        }
+    })
+
 })
 
 app.post("/campgrounds", function(req, res) {
     let name = req.body.name
     let image = req.body.image
-    let newCampground = {name, image}
-    //campgrounds.push(newCampground)
+    let description = req.body.description
+    let newCampground = {name, image, description}
+
     Campgrounds.create(newCampground, function(err, item) {
         if (err) {
             console.log(err)

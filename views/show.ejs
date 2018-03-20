@@ -1,0 +1,13 @@
+<% include partials/header %>
+
+<h1><%= campground.name %></h1>
+
+<% if ( /image/.test(campground.image) ) { %>
+    <img src="../<%= campground.image  %>">
+<% } else {%>
+    <img src="<%= campground.image  %>">
+<% } %>
+
+<p><%= campground.description %></p>
+
+<% include partials/footer %>

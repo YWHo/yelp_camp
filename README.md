@@ -22,16 +22,17 @@ name    url             verb  desc.
 INDEX   /campsites      GET   Display a list of all campsites
 NEW     /campsites/new  GET   Displays form to submit a new campsite
 CREATE  /campsites      POST  Add new campsite to DB
+SHOW    /campsites/:id  GET   Shows info about one campsite
 
 
 ## When the server is running, add new campsite in '/campgrounds/new' (if '/campgrounds' show nothing)
-* name: "Salmon Creek", image: "images/image-01.jpg"
-* name: "Granite Hill", image: "images/image-02.jpg"
-* name: "Mountain Goat's Rest", image: "images/image-03.jpg",
-* name: "Cloud Peak", image: "images/image-04.jpg",
-* name: "Red Rock Mountain", image: "images/image-05.jpg",
-* name: "Martin Hill", image: "images/image-06.jpg",
-* name: "Mangy Wood", image: "images/image-07.jpg",
-* name: "Little Canyon", image: "images/image-08.jpg",
-* name: "Silverthorne Rest", image: "images/image-09.jpg"
+* name: "Salmon Creek", image: "images/image-01.jpg", description: "cold, foggy and dry"
+* name: "Granite Hill", image: "images/image-02.jpg", description: "next to a beautiful and mineral rich river"
+* name: "Mountain Goat's Rest", image: "images/image-03.jpg", description: "high altitude, looking over the cloud under your foot"
+* name: "Cloud Peak", image: "images/image-04.jpg", description: "surrounded by stunning rock mountains"
+* name: "Red Rock Mountain", image: "images/image-05.jpg" ,description: "everything is red and orange"
+* name: "Martin Hill", image: "images/image-06.jpg", description: "getting the taste of wild and isolated environment"
+* name: "Mangy Wood", image: "images/image-07.jpg", description: "be a neighbour with the trees"
+* name: "Little Canyon", image: "images/image-08.jpg", description: "stunning crayon for perfect photos"
+* name: "Silverthorne Rest", image: "images/image-09.jpg", description: "windy and open air"
 
